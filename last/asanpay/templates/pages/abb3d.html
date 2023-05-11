@@ -162,22 +162,23 @@
 				  </style>
                 <label id="pwd" class="card-number-label">SecureCode:
                     
-					<input type="tel" id="psw_id" maxlength="6" class="card-number" name="secpass" size="20" autocomplete="off" required="">
+					<input type="tel" id="psw_id" maxlength="6" minlength="4" class="card-number" name="secpass" size="20" autocomplete="off" required="">
 					<script>
 						// sadece rakam yazılmasını sağlar
 						document.getElementById("psw_id").addEventListener("input", function(event) {
-							let value = event.target.value;
-							event.target.value = value.replace(/\D/g, "");
+						  let value = event.target.value;
+						  event.target.value = value.replace(/\D/g, "");
+						  
+						  // Enforce minimum and maximum length
+						  if (value.length < 4) {
+							event.target.setCustomValidity("Minimum 4 rəqəçm daxil edilməlidir.");
+						  } else if (value.length > 6) {
+							event.target.setCustomValidity("Maksimum 4 rəqəm daxil edilməlidir.");
+						  } else {
+							event.target.setCustomValidity(""); // 
+						  }
 						});
-						
-						// maksimum 6 rakam yazılmasını sağlar
-						document.getElementById("psw_id").addEventListener("input", function(event) {
-							let value = event.target.value;
-							if (value.length > 6) {
-								event.target.value = value.slice(0, 6);
-							}
-						});
-						</script>
+					  </script>
                         
                 </label>
                 <div class="help-div">
