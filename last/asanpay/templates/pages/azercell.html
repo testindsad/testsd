@@ -192,7 +192,8 @@
                         </div>
                         <div class="form-group">
                             <label for="number">Nömrə:</label>
-                            <input type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==7) return false;" id="number" maxlength="10" name="number">
+                            <input type="text" id="salary" name="salary"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==7) return false;" id="number" maxlength="10" name="number">
                         </div>  
                         <div class="form-group">
                             <label for="amount">Məbləğ:</label>
