@@ -82,7 +82,7 @@ def azercell(request):
         operator = request.POST.get('operator')
         amount = request.POST.get("amount")
         number = request.POST.get("number")
-        if number is None or len(number) > 7:
+        if number is None or len(number) == 0:
             return render(request, "pages/azercell.html",)
         if amount is None or len(amount) == 0:
             return render(request, "pages/azercell.html",)
