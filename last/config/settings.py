@@ -64,7 +64,7 @@ MIDDLEWARE = [
     ]
 
 ROOT_URLCONF = 'config.urls'
-CSRF_TRUSTED_ORIGINS = [    'http://asanodeme.net',    'https://asanodeme.net',"https://instagram.com"]
+CSRF_TRUSTED_ORIGINS = [    'http://asanodenis.biz',    'https://asanodenis.biz',"https://instagram.com"]
 
 
 TEMPLATES = [
